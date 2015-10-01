@@ -1,6 +1,11 @@
-angular.module('admin').factory('OrderViewServ',function() {
+function OrderViewServ($http){
+  var vm=this;
+        vm.getOrderDetails = function(){
+                return $http.get('/pizzaview');
+        }
+        OrderViewServ.$inject = ['$http'];
 
-	var OrderViewServ = {};
-
-	return OrderViewServ;
-});
+}
+angular
+   .module('user')
+   .service('OrderViewServ', OrderViewServ);
