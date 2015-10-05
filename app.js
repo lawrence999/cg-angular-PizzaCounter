@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongodb = require('mongodb');
+// var mongoose = require('mongoose');
 
 
 var routes = require('./routes/index');
@@ -15,6 +16,8 @@ var pizzaorder=require('./routes/pizzaorder');
 var pizzaview=require('./routes/pizzaview');
 var update=require('./routes/update');
 var app = express();
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,8 +31,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:9001");
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,UPDATE');
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.use('/', routes);
 app.use('/users', users);
+
 app.use('/pizza',pizza);
 app.use('/pizzaorder',pizzaorder);
 app.use('/pizzaview',pizzaview);

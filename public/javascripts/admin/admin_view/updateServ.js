@@ -3,11 +3,11 @@ function updateServ($http) {
     vm.changeStatus = function(obj){
         return $http({
             method  : 'POST',
-            url     : '/update',
+            url     : 'http://localhost:3000/update',
             data    : obj, //forms user object
             headers : {'Content-Type': 'application/json'}
-        })
-    }
+        });
+    };
     updateServ.$inject = ['$http'];
 }
 

@@ -7,7 +7,7 @@ function placeorderCtrl($scope,DataService,postServ){
           vm.user.order=postdata;
           vm.user.deliverystatus=true;
           vm.insert = postServ.postCartDtls(vm.user);
-          alert("order placed");
+          window.alert("order placed");
           vm.user={};
        };
     placeorderCtrl.$inject = ['$scope','DataService','postServ'];

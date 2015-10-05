@@ -17,7 +17,7 @@ function pizzaDetailsCtrl($scope,$routeParams,DataService,pizzaDetailsServ){
                 user.qty=vm.user.qty;
                 user.cost=user.rate*user.qty;
                 DataService.order_d(user);
-            }
+            };
         });
         pizzaDetailsCtrl.$inject = ['$scope','$routeParams','DataService','pizzaDetailsServ'];
 

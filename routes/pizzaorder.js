@@ -4,7 +4,7 @@
     var MongoClient = mongodb.MongoClient;
     var url = 'mongodb://localhost:27017/pApp';
 
-    router.all('/', function(req, res, next) {
+    router.post('/', function(req, res, next) {
       console.log(req.body);
       var MongoClient = mongodb.MongoClient;
       var url = 'mongodb://localhost:27017/pApp';

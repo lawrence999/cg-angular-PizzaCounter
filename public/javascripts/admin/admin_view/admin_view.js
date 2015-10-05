@@ -20,16 +20,16 @@ function deliverCtrl($scope,OrderViewServ,updateServ){
 
         vm.details.success(function(data) {
             console.log("hiii",data);
-            if(data == 'empty') {
+            if(data === 'empty') {
               vm.details = {};
             } else {
               vm.details = data;
             }
         });
-    }
+    };
     vm.details=OrderViewServ.getOrderDetails();
       vm.details.success(function(data) {
-        if(data == 'empty') {
+        if(data === 'empty') {
           vm.details = {};
         } else {
           vm.details = data;

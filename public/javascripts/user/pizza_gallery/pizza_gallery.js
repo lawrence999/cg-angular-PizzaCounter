@@ -8,12 +8,12 @@ function pizzaCtrl($scope,$location,pizzaListServ){
         });
 
         vm.check=function(){
-          if(vm.user=="admin"&&vm.password=="admin"){
+          if(vm.user==="admin"&&vm.password==="admin"){
             $location.path("login");
           }else {
-            alert("invalid username or password");
+            window.alert("invalid username or password");
           }
-        }
+      };
         pizzaCtrl.$inject = ['$scope','$location','pizzaListServ'];
 }
 angular

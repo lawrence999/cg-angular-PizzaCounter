@@ -10,7 +10,7 @@
 
     // Use connect method to connect to the Server
     /* GET home page. */
-    router.all('/', function(req, res, next) {
+    router.post('/', function(req, res, next) {
     MongoClient.connect(url, function (err, db) {
       if (err) {
         console.log('Unable to connect to the mongoDB server. Error:', err);

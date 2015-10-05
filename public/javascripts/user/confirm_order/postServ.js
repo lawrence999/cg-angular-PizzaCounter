@@ -3,11 +3,11 @@ function postServ($http) {
        vm.postCartDtls = function(obj){
          return $http({
            method  : 'POST',
-           url     : '/pizzaorder',
+           url     : 'http://localhost:3000/pizzaorder',
            data    : obj,
            headers : {'Content-Type': 'application/json'}
-         })
-       }
+       });
+   };
        postServ.$inject = ['$http'];
 }
 angular
