@@ -20,7 +20,14 @@
      var collection = db.collection('pizzaorder');
      var content=req.body;
      var id=new mongodb.ObjectID(content.id);
+     console.log("id recived:",id)
      collection.update({"_id":id},{$set:{"deliverystatus":false}},function(err,result){
+         if (err) {
+           console.log(err);
+         } else {
+           console.log('Updation Successfull');
+           res.send("updated");
+         }
     });
       }
     });
