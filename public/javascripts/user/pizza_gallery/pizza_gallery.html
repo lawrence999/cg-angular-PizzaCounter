@@ -18,6 +18,7 @@
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
+                            <li class="active" style="padding:8px" ><button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">ADMIN LOGIN</button></li>
                             <li class="active"><a href="#/cart">view cart</a></li>
                         </ul>
                         <div class="col-sm-3 col-md-3 pull-right">
@@ -29,47 +30,79 @@
                         </div>
                     </div>
                 </nav>
-                <div style="height:50px;" ><i><h1 align="center">GrAb YoUr PiZzA DuDe....!</h1></i></div>
-                    <div style="float:initial;position:relative">
-                        <div>
-                            <carousel interval="5000" no-wrap="false" disable-animate="true">
-                                <slide ng-repeat="pizza in pizzaGlry.details | filter:query" active="slide.active">
-                                    <a href="#/{{pizza.name}}"><img ng-src="{{pizza.image}}" style="margin:auto; width:47%; height:47% "></a>
-                                    <div class="carousel-caption">
-                                        <a href="#/{{pizza.name}}"><p>{{pizza.name}}</p></a>
-                                    </div>
-                                </slide>
-                            </carousel>
-                        </div>
+            </div>
+<!-- new insertion -->
+            <div>
+                <div collapse="isCollapsed">
+                    <div class="well well-lg">
+                        <center>
+                            <table>
+                                <tr>
+                                    <td colspan="2" align="center">ADMIN LOGIN<br/></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="center"> <br></td>
+                                </tr>
+                                <tr >
+                                    <td width="25%" >Username </td>
+                                    <td><input type="text" ng-model="pizzaGlry.user"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="center"> <br></td>
+                                </tr>
+                                <tr>
+                                    <td width="25%">Password </td>
+                                    <td colspan="2"><input type="password" ng-model="pizzaGlry.password"></td>
+                                </tr>
+                                <tr >
+                                    <td align="center" colspan="3"><br/><button ng-click="pizzaGlry.check()">login</button></td>
+                                </tr>
+                            </table>
+                        </center>
                     </div>
-                            <div style="width:100%;float:initial;padding:10px" >
-                                <center>
-                                    <table style="background-color:#CCFFFF;padding:5px">
-                                        <tr>
-                                            <td colspan="2" align="center">ADMIN LOGIN<br/></td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2" align="center"> <br></td>
-                                        </tr>
-                                        <tr >
-                                            <td width="25%" >Username </td>
-                                            <td><input type="text" ng-model="pizzaGlry.user"></td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2" align="center"> <br></td>
-                                        </tr>
-                                        <tr>
-                                            <td width="25%">Password </td>
-                                            <td colspan="2"><input type="password" ng-model="pizzaGlry.password"></td>
-                                        </tr>
-                                        <tr >
-                                            <td align="center" colspan="3"><br/><button ng-click="pizzaGlry.check()">login</button></a></td>
-                                        </tr>
-                                </table>
-                            </center>
-                        </div>
                 </div>
             </div>
+<!--  end of new insertion-->
+            <div style="height:50px;" ><i><h1 align="center">GrAb YoUr PiZzA DuDe....!</h1></i></div>
+
+            <div style="float:initial;position:relative">
+                <div>
+                    <carousel interval="5000" no-wrap="false" disable-animate="true">
+                        <slide ng-repeat="pizza in pizzaGlry.details | filter:query" active="slide.active">
+                            <a href="#/{{pizza.name}}"><img ng-src="{{pizza.image}}" style="margin:auto; width:47%; height:47% "></a>
+                            <div class="carousel-caption">
+                                <a href="#/{{pizza.name}}"><p>{{pizza.name}}</p></a>
+                            </div>
+                        </slide>
+                    </carousel>
+                </div>
+            </div>
+            <!-- <div style="width:100%;float:initial;padding:10px" >
+                <center>
+                    <table style="background-color:#CCFFFF;padding:5px">
+                        <tr>
+                            <td colspan="2" align="center">ADMIN LOGIN<br/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"> <br></td>
+                        </tr>
+                        <tr >
+                            <td width="25%" >Username </td>
+                            <td><input type="text" ng-model="pizzaGlry.user"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"> <br></td>
+                        </tr>
+                        <tr>
+                            <td width="25%">Password </td>
+                            <td colspan="2"><input type="password" ng-model="pizzaGlry.password"></td>
+                        </tr>
+                        <tr >
+                            <td align="center" colspan="3"><br/><button ng-click="pizzaGlry.check()">login</button></td>
+                        </tr>
+                    </table>
+                </center>
+            </div> -->
         </div>
     </body>
 </html>

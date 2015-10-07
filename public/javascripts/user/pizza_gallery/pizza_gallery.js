@@ -1,6 +1,7 @@
 function pizzaCtrl($scope,$location,pizzaListServ){
     var vm = this;
     $scope.pageClass = 'page-home';
+    $scope.isCollapsed = true;
     vm.details =pizzaListServ.getPizzaList();
     vm.details.success(function(data) {
         vm.details = data;
